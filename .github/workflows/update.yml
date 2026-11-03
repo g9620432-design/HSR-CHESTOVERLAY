@@ -1,0 +1,75 @@
+# Автообновление данных «Персонажи и реликвии» для HSR Chest Overlay.
+# Каждые 6 часов берёт свежие данные HSR Optimizer, собирает подписанный пакет
+# и публикует его на GitHub Pages и в ветку pack (её раздаёт CDN jsDelivr). Всё бесплатно.
+name: Обновление данных
+
+on:
+  schedule:
+    - cron: '23 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Опубликовать, даже если ничего не изменилось'
+        type: boolean
+        default: false
+  push:
+    branches: [main, master]
+    paths: ['app-release.json', 'hsrpack/**', '.github/workflows/update.yml']
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: write
+
+concurrency:
+  group: hsr-pack
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    outputs:
+      changed: ${{ steps.pack.outputs.changed }}
+      version: ${{ steps.pack.outputs.version }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+
+      - name: Сборка и публикация пакета
+        id: pack
+        env:
+          HSRPACK_KEY: ${{ secrets.HSRPACK_KEY }}
+          GITHUB_TOKEN: ${{ github.token }}
+          FORCE: ${{ inputs.force || github.event_name == 'push' }}
+        run: bash hsrpack/ci-build.sh
+
+      - name: Подготовка для GitHub Pages
+        if: steps.pack.outputs.changed == '1'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ steps.pack.outputs.dir }}
+
+      # GitHub отключает расписание в репозиториях без активности 60 дней — не даём ему уснуть
+      - name: Не засыпать
+        if: github.event_name == 'schedule'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/update.yml/enable" || true
+
+  pages:
+    needs: build
+    if: needs.build.outputs.changed == '1'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Публикация на GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,16 @@
+{
+  "version": "1.6.0",
+  "url": "https://github.com/g9620432-design/HSR-CHESTOVERLAY/releases/download/v1.6.0/HSR-Chest-Overlay-Setup-1.6.0.exe",
+  "sha256": "c1ef4ac206c313adc902762519e1c1bbd2656a0dabc5cf0ecf1dba0a5896830d",
+  "notes": {
+    "ru": "Персонажи и сборки, оценка реликвий в процентах, калькулятор урона, мета-команды, английский язык.",
+    "en": "Characters and builds, relic scoring, damage calculator, meta teams, English language."
+  },
+  "revoked": [],
+  "shops": [
+    {
+      "name": "FunPay",
+      "url": "https://funpay.com/"
+    }
+  ]
+}

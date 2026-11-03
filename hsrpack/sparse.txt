@@ -1,0 +1,17 @@
+# Какие папки HSR Optimizer нужны для сборки (остальное не скачивается)
+/src/
+/public/locales/
+/public/assets/icon/
+/public/assets/misc/partHead.webp
+/public/assets/misc/partHands.webp
+/public/assets/misc/partBody.webp
+/public/assets/misc/partFeet.webp
+/public/assets/misc/partPlanarSphere.webp
+/public/assets/misc/partLinkRope.webp
+/patches/
+/LICENSE.md
+/package.json
+/package-lock.json
+/tsconfig.json
+/vite.config.ts
+/vite.leaderboard.config.ts
