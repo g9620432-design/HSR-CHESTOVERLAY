@@ -10,7 +10,11 @@
   "shops": [
     {
       "name": "FunPay",
-      "url": "https://funpay.com/"
+      "url": "https://funpay.com/lots/offer?id=81236897",
+      "price": {
+        "ru": "600 ₽ навсегда",
+        "en": "600 RUB lifetime"
+      }
     }
   ]
 }
