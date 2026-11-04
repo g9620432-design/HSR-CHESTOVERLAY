@@ -1,10 +1,10 @@
 {
-  "version": "1.9.0",
-  "url": "https://github.com/g9620432-design/HSR-CHESTOVERLAY/releases/download/v1.9.0/HSR-Chest-Overlay-Setup-1.9.0.exe",
-  "sha256": "80c59e18db2f68bddc2cad1cfb600a92023283b6589eaa4e27a0dc0275b300dd",
+  "version": "2.0.0",
+  "url": "https://github.com/g9620432-design/HSR-CHESTOVERLAY/releases/download/v2.0.0/HSR-Chest-Overlay-Setup-2.0.0.exe",
+  "sha256": "fd94beb6fdd119658345bfd632b20fe0671ff6b83c26522fdde6a0d063546abd",
   "notes": {
-    "ru": "Ключи на 7, 14 и 30 дней или навсегда; срок считается с момента активации, продление добавляет дни. Пробного периода больше нет.",
-    "en": "Keys for 7, 14 and 30 days or lifetime; the term starts at activation, renewing adds days. No more free trial."
+    "ru": "Новое: «Прыжки» — история круток и гарант, «Прокачка» — материалы на персонажа, «Сегодня» — сброс дня, энергия и промокоды. Звук рядом с сундуком, время маршрута, обновление в один клик.",
+    "en": "New: Warps — warp history and pity, Planner — materials per character, Today — resets, Trailblaze Power and promo codes. Chest chime, route time, one-click update."
   },
   "revoked": [],
   "shops": [

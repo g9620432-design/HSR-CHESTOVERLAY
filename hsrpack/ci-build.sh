@@ -36,6 +36,8 @@ say "2/4 Устанавливаю зависимости"
 say "3/4 Собираю пакет"
 REL=(); [ -f "$ROOT/app-release.json" ] && REL=(--app-release "$ROOT/app-release.json")
 HSRPACK_SHARP="$WORK/sharp/node_modules/sharp" node "$HERE/build.mjs" --src "$SRC" --out "$OUT" "${REL[@]}"
+# страница программы (сайт) — https://<ник>.github.io/<репозиторий>/
+[ -f "$HERE/landing.html" ] && cp "$HERE/landing.html" "$OUT/index.html"
 VERSION=$(node -p 'require(process.argv[1]).version' "$OUT/manifest.json")
 out version "$VERSION"; out dir "$OUT"
 
