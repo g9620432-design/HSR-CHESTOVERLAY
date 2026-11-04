@@ -1,0 +1,54 @@
+{
+  "version": "2.1.0",
+  "url": "https://github.com/g9620432-design/HSR-CHESTOVERLAY/releases/download/v2.1.0/HSR-Chest-Overlay-Setup-2.1.0.exe",
+  "sha256": "c8d436e167ce6528db52dea5ebf815a334cc2e57bda6f448a476746361dc2607",
+  "notes": {
+    "ru": "Новое: маршрут с телепортами и «Что осталось собрать» с фото, мини-окно в углу, % по мирам, синхронизация прогресса между компьютерами, улучшены «Прыжки» и «Прокачка».",
+    "en": "New: route with teleports and \"What's left\" with photos, corner mini window, per-world %, progress sync between PCs, improved Warps and Planner."
+  },
+  "revoked": [],
+  "shops": [
+    {
+      "name": "FunPay",
+      "url": "https://funpay.com/lots/offer?id=81236897",
+      "price": {
+        "ru": "300 ₽ навсегда",
+        "en": "300 RUB lifetime"
+      },
+      "plans": [
+        {
+          "days": 7,
+          "price": {
+            "ru": "99 ₽",
+            "en": "99 RUB"
+          },
+          "url": "https://funpay.com/users/8419006/"
+        },
+        {
+          "days": 14,
+          "price": {
+            "ru": "149 ₽",
+            "en": "149 RUB"
+          },
+          "url": "https://funpay.com/users/8419006/"
+        },
+        {
+          "days": 30,
+          "price": {
+            "ru": "199 ₽",
+            "en": "199 RUB"
+          },
+          "url": "https://funpay.com/users/8419006/"
+        },
+        {
+          "days": 0,
+          "price": {
+            "ru": "300 ₽",
+            "en": "300 RUB"
+          }
+        }
+      ]
+    }
+  ],
+  "licenseServer": "https://hsro-license.tiktokzikzak39.workers.dev"
+}
