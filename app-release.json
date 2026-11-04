@@ -1,10 +1,10 @@
 {
-  "version": "1.8.0",
-  "url": "https://github.com/g9620432-design/HSR-CHESTOVERLAY/releases/download/v1.8.0/HSR-Chest-Overlay-Setup-1.8.0.exe",
-  "sha256": "ef17a560ae8daaddd603c3fa683451ab4efd394e7fbc7b2968ea663c99568f8e",
+  "version": "1.9.0",
+  "url": "https://github.com/g9620432-design/HSR-CHESTOVERLAY/releases/download/v1.9.0/HSR-Chest-Overlay-Setup-1.9.0.exe",
+  "sha256": "80c59e18db2f68bddc2cad1cfb600a92023283b6589eaa4e27a0dc0275b300dd",
   "notes": {
-    "ru": "Точнее и плавнее отслеживание (точка движется плавно, до 30 кадров/с, меньше нагрузка), карта больше не перескакивает на чужую локацию при входе в комнату или уровень, авто-отметка точнее (радиус в метрах, поправка на задержку).",
-    "en": "More accurate and smoother tracking (the dot moves smoothly at up to 30 fps with less load), the map no longer jumps to a wrong location when entering a room or level, more accurate auto-mark (radius in meters, latency compensation)."
+    "ru": "Ключи на 7, 14 и 30 дней или навсегда; срок считается с момента активации, продление добавляет дни. Пробного периода больше нет.",
+    "en": "Keys for 7, 14 and 30 days or lifetime; the term starts at activation, renewing adds days. No more free trial."
   },
   "revoked": [],
   "shops": [
@@ -14,7 +14,40 @@
       "price": {
         "ru": "300 ₽ навсегда",
         "en": "300 RUB lifetime"
-      }
+      },
+      "plans": [
+        {
+          "days": 7,
+          "price": {
+            "ru": "99 ₽",
+            "en": "99 RUB"
+          },
+          "url": "https://funpay.com/users/8419006/"
+        },
+        {
+          "days": 14,
+          "price": {
+            "ru": "149 ₽",
+            "en": "149 RUB"
+          },
+          "url": "https://funpay.com/users/8419006/"
+        },
+        {
+          "days": 30,
+          "price": {
+            "ru": "199 ₽",
+            "en": "199 RUB"
+          },
+          "url": "https://funpay.com/users/8419006/"
+        },
+        {
+          "days": 0,
+          "price": {
+            "ru": "300 ₽",
+            "en": "300 RUB"
+          }
+        }
+      ]
     }
   ]
 }
