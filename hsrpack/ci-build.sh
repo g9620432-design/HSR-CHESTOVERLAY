@@ -9,7 +9,7 @@ UPSTREAM=${UPSTREAM:-https://github.com/fribbels/hsr-optimizer.git}
 REPO=${GITHUB_REPOSITORY:-}
 say() { echo "== $*"; }
 out() { [ -n "${GITHUB_OUTPUT:-}" ] && echo "$1=$2" >> "$GITHUB_OUTPUT" || true; }
-​
+
 if [ -z "${HSRPACK_KEY:-}" ]; then
   if [ "${GITHUB_EVENT_NAME:-}" = push ]; then echo "::warning::Секрет HSRPACK_KEY ещё не добавлен — сборка пропущена. Добавьте его и запустите «Обновление данных» вручную."; out changed 0; exit 0; fi
   echo "::error::Не задан секрет HSRPACK_KEY. Откройте Settings → Secrets and variables → Actions и добавьте его (содержимое файла HSRPACK_KEY.txt)."
@@ -22,23 +22,23 @@ if [ -f "$ROOT/app-release.json" ]; then
     || { echo "::error::Ошибка в app-release.json — проверьте кавычки, запятые, поле version (например 1.7.0) и ссылку url (https://…)"; exit 1; }
 fi
 mkdir -p "$WORK"
-​
+
 say "1/4 Скачиваю HSR Optimizer"
 rm -rf "$SRC"
 git clone -q --depth 1 --filter=blob:none --sparse "$UPSTREAM" "$SRC"
 git -C "$SRC" sparse-checkout set --no-cone $(grep -v '^#' "$HERE/sparse.txt" | tr -d '\r')
 echo "   commit $(git -C "$SRC" rev-parse --short HEAD)"
-​
+
 say "2/4 Устанавливаю зависимости"
 (cd "$SRC" && { npm ci --no-audit --no-fund --loglevel=error || npm install --no-audit --no-fund --loglevel=error; })
 [ -d "$WORK/sharp/node_modules/sharp" ] || npm install --no-save --no-audit --no-fund --loglevel=error --prefix "$WORK/sharp" sharp
-​
+
 say "3/4 Собираю пакет"
 REL=(); [ -f "$ROOT/app-release.json" ] && REL=(--app-release "$ROOT/app-release.json")
 HSRPACK_SHARP="$WORK/sharp/node_modules/sharp" node "$HERE/build.mjs" --src "$SRC" --out "$OUT" "${REL[@]}"
 VERSION=$(node -p 'require(process.argv[1]).version' "$OUT/manifest.json")
 out version "$VERSION"; out dir "$OUT"
-​
+
 say "4/4 Сравниваю с опубликованным"
 PREV="$WORK/prev-manifest.json"; rm -f "$PREV"
 if [ -n "$REPO" ]; then curl -fsSL "https://raw.githubusercontent.com/$REPO/pack/manifest.json?t=$(date +%s)" -o "$PREV" 2>/dev/null || rm -f "$PREV"; fi
@@ -50,7 +50,7 @@ out changed "$CHANGED"
 if [ "$CHANGED" != 1 ]; then say "Изменений нет — публикация не нужна ($VERSION)"; exit 0; fi
 say "Новая версия данных: $VERSION"
 if [ -z "$REPO" ] || [ -z "${GITHUB_TOKEN:-}" ]; then say "Локальный запуск: пакет в $OUT"; exit 0; fi
-​
+
 # ветка pack (зеркала jsDelivr и raw.githubusercontent) — всегда один коммит, чтобы репозиторий не разрастался
 cd "$OUT"; touch .nojekyll
 git init -q -b pack
