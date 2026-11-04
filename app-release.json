@@ -1,11 +1,10 @@
 {
-  "version": "2.0.0",
-  "licenseServer": "https://hsro-license.tiktokzikzak39.workers.dev",
-  "url": "https://github.com/g9620432-design/HSR-CHESTOVERLAY/releases/download/v2.0.0/HSR-Chest-Overlay-Setup-2.0.0.exe",
-  "sha256": "fd94beb6fdd119658345bfd632b20fe0671ff6b83c26522fdde6a0d063546abd",
+  "version": "2.1.0",
+  "url": "https://github.com/g9620432-design/HSR-CHESTOVERLAY/releases/download/v2.1.0/HSR-Chest-Overlay-Setup-2.1.0.exe",
+  "sha256": "c8d436e167ce6528db52dea5ebf815a334cc2e57bda6f448a476746361dc2607",
   "notes": {
-    "ru": "Новое: «Прыжки» — история круток и гарант, «Прокачка» — материалы на персонажа, «Сегодня» — сброс дня, энергия и промокоды. Звук рядом с сундуком, время маршрута, обновление в один клик.",
-    "en": "New: Warps — warp history and pity, Planner — materials per character, Today — resets, Trailblaze Power and promo codes. Chest chime, route time, one-click update."
+    "ru": "Новое: маршрут с телепортами и «Что осталось собрать» с фото, мини-окно в углу, % по мирам, синхронизация прогресса между компьютерами, улучшены «Прыжки» и «Прокачка».",
+    "en": "New: route with teleports and \"What's left\" with photos, corner mini window, per-world %, progress sync between PCs, improved Warps and Planner."
   },
   "revoked": [],
   "shops": [
@@ -50,5 +49,6 @@
         }
       ]
     }
-  ]
+  ],
+  "licenseServer": "https://hsro-license.tiktokzikzak39.workers.dev"
 }
