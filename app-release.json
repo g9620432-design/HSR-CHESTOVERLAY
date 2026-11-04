@@ -1,10 +1,10 @@
 {
-  "version": "1.6.0",
-  "url": "https://github.com/g9620432-design/HSR-CHESTOVERLAY/releases/download/v1.6.0/HSR-Chest-Overlay-Setup-1.6.0.exe",
-  "sha256": "c1ef4ac206c313adc902762519e1c1bbd2656a0dabc5cf0ecf1dba0a5896830d",
+  "version": "1.8.0",
+  "url": "https://github.com/g9620432-design/HSR-CHESTOVERLAY/releases/download/v1.8.0/HSR-Chest-Overlay-Setup-1.8.0.exe",
+  "sha256": "ef17a560ae8daaddd603c3fa683451ab4efd394e7fbc7b2968ea663c99568f8e",
   "notes": {
-    "ru": "Персонажи и сборки, оценка реликвий в процентах, калькулятор урона, мета-команды, английский язык.",
-    "en": "Characters and builds, relic scoring, damage calculator, meta teams, English language."
+    "ru": "Точнее и плавнее отслеживание (точка движется плавно, до 30 кадров/с, меньше нагрузка), карта больше не перескакивает на чужую локацию при входе в комнату или уровень, авто-отметка точнее (радиус в метрах, поправка на задержку).",
+    "en": "More accurate and smoother tracking (the dot moves smoothly at up to 30 fps with less load), the map no longer jumps to a wrong location when entering a room or level, more accurate auto-mark (radius in meters, latency compensation)."
   },
   "revoked": [],
   "shops": [
@@ -12,9 +12,10 @@
       "name": "FunPay",
       "url": "https://funpay.com/lots/offer?id=81236897",
       "price": {
-        "ru": "400 ₽ навсегда",
-        "en": "400 RUB lifetime"
+        "ru": "300 ₽ навсегда",
+        "en": "300 RUB lifetime"
       }
     }
   ]
 }
+​
